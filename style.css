@@ -1,0 +1,35 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+  color: #333;
+}
+header {
+  background: #0073aa;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+section {
+  padding: 1.5rem;
+  margin: 1rem auto;
+  max-width: 800px;
+  background: white;
+  border-radius: 8px;
+}
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #eee;
+}
+h1, h2 {
+  margin-bottom: 0.5rem;
+}
+a {
+  color: #0073aa;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
