@@ -3,40 +3,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Experienced WordPress & PHP developer with 6+ years of expertise in theme/plugin development, API integration, and custom solutions.">
-  <title>Saddam Hussain | Web Developer Portfolio</title>
+  <meta name="description" content="Experienced WordPress & PHP developer portfolio of Saddam Hussain.">
+  <title>Saddam Hussain | WordPress Developer</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
   <header>
-    <h1>Saddam Hussain</h1>
-    <p>WordPress & PHP Developer | 6+ Years Experience</p>
+    <div class="container">
+      <h1>Saddam Hussain</h1>
+      <p>WordPress & PHP Developer with 6+ Years of Experience</p>
+    </div>
   </header>
 
-  <section id="about">
+  <nav>
+    <div class="container">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <section id="about" class="container">
     <h2>About Me</h2>
-    <p>Experienced developer skilled in PHP, WordPress, custom plugin/theme development, JavaScript, jQuery, MySQL, and performance optimization.</p>
+    <p>I am a passionate WordPress and PHP developer with over 6 years of hands-on experience building custom themes, plugins, and scalable web solutions. I specialize in full-stack development with a focus on performance and user experience.</p>
   </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li><a href="https://wordpress.org/plugins/conscent-paywall" target="_blank">Conscent Paywall Plugin</a> - Subscription & login system for publishers.</li>
-      <li><a href="https://mkena.com" target="_blank">MKena</a> - Auto parts eCommerce platform.</li>
-      <li><a href="https://knuffel.ch" target="_blank">Knuffel</a> - Fabric online store.</li>
-      <li><a href="https://bright-jobs.de" target="_blank">Bright Jobs</a> - Job search and filter system.</li>
-      <li><a href="https://primas-software-international.com/" target="_blank">Primas Software</a> - Digital storage for personal data.</li>
-    </ul>
+  <section id="projects" class="container">
+    <h2>Highlighted Projects</h2>
+    <div class="carousel">
+      <div class="carousel-track">
+        <div class="card">
+          <h3>Conscent Paywall</h3>
+          <p>WordPress plugin for paywall and login features for publishers.</p>
+          <a href="https://wordpress.org/plugins/conscent-paywall" target="_blank">View Plugin</a>
+        </div>
+        <div class="card">
+          <h3>MKena</h3>
+          <p>Auto parts eCommerce store with manufacturer-based catalog.</p>
+          <a href="https://mkena.com" target="_blank">Visit Site</a>
+        </div>
+        <div class="card">
+          <h3>Knuffel</h3>
+          <p>Fabric store with product filters and admin panel for management.</p>
+          <a href="https://knuffel.ch" target="_blank">Visit Site</a>
+        </div>
+        <div class="card">
+          <h3>Bright Jobs</h3>
+          <p>Job listing site with filters by location and category.</p>
+          <a href="https://bright-jobs.de" target="_blank">Visit Site</a>
+        </div>
+        <div class="card">
+          <h3>Primas Software</h3>
+          <p>Central digital storage and visualization of private data.</p>
+          <a href="https://primas-software-international.com/" target="_blank">Visit Site</a>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section id="contact">
+  <section id="contact" class="container">
     <h2>Contact</h2>
-    <p>Email: saddam802216@gmail.com</p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/saddam802216/" target="_blank">linkedin.com/in/saddam802216</a></p>
+    <p><i class="fas fa-envelope"></i> saddam802216@gmail.com</p>
+    <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/saddam802216/" target="_blank">linkedin.com/in/saddam802216</a></p>
   </section>
 
   <footer>
-    <p>© 2025 Saddam Hussain. All rights reserved.</p>
+    <p>© 2025 Saddam Hussain. Built with ❤️</p>
   </footer>
+
+  <script>
+    const track = document.querySelector('.carousel-track');
+    let scrollAmount = 0;
+    setInterval(() => {
+      scrollAmount += 300;
+      if (scrollAmount >= track.scrollWidth - track.clientWidth) scrollAmount = 0;
+      track.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+    }, 3000);
+  </script>
 </body>
 </html>
