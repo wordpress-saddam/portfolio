@@ -153,6 +153,8 @@
             <div class="mt-8 flex justify-center space-x-4">
                 <a href="mailto:wordpress.saddam@gmail.com" class="bg-custom-primary text-white py-3 px-6 rounded-full font-bold shadow-lg hover:bg-custom-primary transition-colors">Email Me</a>
                 <a href="https://linkedin.com/in/saddam802216" target="_blank" class="bg-custom-secondary text-white py-3 px-6 rounded-full font-bold shadow-lg hover:bg-custom-primary transition-colors">LinkedIn</a>
+                <!-- Updated button to download the resume file -->
+                <a href="uploaded:saddam-resume.pdf" download class="bg-custom-primary text-white py-3 px-6 rounded-full font-bold shadow-lg hover:bg-custom-secondary transition-colors">Download Resume</a>
             </div>
         </section>
         
@@ -197,7 +199,28 @@
             <h3 class="text-3xl font-bold text-custom-primary mb-6 border-b-2 border-custom-primary pb-2 text-center">Detailed Projects</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <!-- Project Card 1: ConsCent Paywall -->
+                <!-- Project Card 1: SORTD Plugin -->
+                <a href="https://wordpress.org/plugins/sortd/" target="_blank" class="block group cursor-pointer transform transition-transform hover:scale-105 hover:shadow-2xl">
+                    <div class="bg-custom-card p-6 rounded-lg shadow-lg border border-custom-primary">
+                        <img src="https://placehold.co/400x250/374151/D1D5DB?text=SORTD+Plugin" alt="SORTD Plugin" class="rounded-lg mb-4 w-full h-auto">
+                        <h4 class="text-xl font-bold text-custom-primary">WordPress Plugin: SORTD</h4>
+                        <p class="text-custom-secondary mt-2 text-sm">
+                            A WordPress plugin for advanced sorting functionality that improves user experience on websites. Developed using a combination of PHP, WordPress, JavaScript, and MySQL to provide a robust and flexible solution for content ordering.
+                        </p>
+                        <div class="mt-4">
+                            <p class="font-semibold text-custom-primary">Technologies:</p>
+                            <ul class="flex flex-wrap gap-2 mt-1">
+                                <li class="bg-custom-secondary text-white px-3 py-1 rounded-full text-xs">PHP</li>
+                                <li class="bg-custom-secondary text-white px-3 py-1 rounded-full text-xs">WordPress</li>
+                                <li class="bg-custom-secondary text-white px-3 py-1 rounded-full text-xs">JavaScript</li>
+                                <li class="bg-custom-secondary text-white px-3 py-1 rounded-full text-xs">jQuery</li>
+                                <li class="bg-custom-secondary text-white px-3 py-1 rounded-full text-xs">MySQL</li>
+                            </ul>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project Card 2: ConsCent Paywall -->
                 <a href="https://wordpress.org/plugins/conscent-paywall/" target="_blank" class="block group cursor-pointer transform transition-transform hover:scale-105 hover:shadow-2xl">
                     <div class="bg-custom-card p-6 rounded-lg shadow-lg border border-custom-primary">
                         <img src="https://placehold.co/400x250/374151/D1D5DB?text=ConsCent+Paywall" alt="ConsCent Paywall Plugin" class="rounded-lg mb-4 w-full h-auto">
@@ -218,7 +241,7 @@
                     </div>
                 </a>
 
-                <!-- Project Card 2: MKena -->
+                <!-- Project Card 3: MKena -->
                 <a href="#" target="_blank" class="block group cursor-pointer transform transition-transform hover:scale-105 hover:shadow-2xl">
                     <div class="bg-custom-card p-6 rounded-lg shadow-lg border border-custom-primary">
                         <img src="https://placehold.co/400x250/374151/D1D5DB?text=MKena" alt="MKena E-commerce" class="rounded-lg mb-4 w-full h-auto">
@@ -239,7 +262,7 @@
                     </div>
                 </a>
 
-                <!-- Project Card 3: Knuffel -->
+                <!-- Project Card 4: Knuffel -->
                 <a href="#" target="_blank" class="block group cursor-pointer transform transition-transform hover:scale-105 hover:shadow-2xl">
                     <div class="bg-custom-card p-6 rounded-lg shadow-lg border border-custom-primary">
                         <img src="https://placehold.co/400x250/374151/D1D5DB?text=Knuffel" alt="Knuffel E-commerce" class="rounded-lg mb-4 w-full h-auto">
@@ -261,7 +284,7 @@
                     </div>
                 </a>
 
-                <!-- Project Card 4: Bright-Jobs -->
+                <!-- Project Card 5: Bright-Jobs -->
                 <a href="#" target="_blank" class="block group cursor-pointer transform transition-transform hover:scale-105 hover:shadow-2xl">
                     <div class="bg-custom-card p-6 rounded-lg shadow-lg border border-custom-primary">
                         <img src="https://placehold.co/400x250/374151/D1D5DB?text=Bright-Jobs" alt="Bright-Jobs Platform" class="rounded-lg mb-4 w-full h-auto">
@@ -282,7 +305,7 @@
                     </div>
                 </a>
 
-                <!-- Project Card 5: primas-software -->
+                <!-- Project Card 6: primas-software -->
                 <a href="#" target="_blank" class="block group cursor-pointer transform transition-transform hover:scale-105 hover:shadow-2xl">
                     <div class="bg-custom-card p-6 rounded-lg shadow-lg border border-custom-primary">
                         <img src="https://placehold.co/400x250/374151/D1D5DB?text=Primas+Software" alt="Primas Software" class="rounded-lg mb-4 w-full h-auto">
@@ -302,6 +325,7 @@
                         </div>
                     </div>
                 </a>
+
             </div>
         </section>
 
@@ -352,10 +376,10 @@
 
     <!-- Footer Section -->
     <footer class="bg-custom-header text-center p-4 mt-12 text-custom-secondary">
-        <p>&copy; 2025 Saddam Hussain. All Rights Reserved.</p>
+        <p>&copy; 2024 Saddam Hussain. All Rights Reserved.</p>
     </footer>
 
-    <!-- JavaScript for mobile menu and carousel functionality -->
+    <!-- JavaScript for mobile menu and carousel -->
     <script>
         document.getElementById('menu-button').addEventListener('click', function() {
             const mobileMenu = document.getElementById('mobile-menu');
