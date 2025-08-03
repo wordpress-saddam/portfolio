@@ -8,23 +8,47 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        
+        :root {
+            --bg-color: #111827;
+            --text-color: #e5e7eb;
+            --header-bg: #1f2937;
+            --card-bg: #1f2937;
+            --primary-color: #2dd4bf;
+            --secondary-color: #9ca3af;
+        }
+
+        body.light-mode {
+            --bg-color: #f3f4f6;
+            --text-color: #1f2937;
+            --header-bg: #ffffff;
+            --card-bg: #e5e7eb;
+            --primary-color: #0d9488;
+            --secondary-color: #6b7280;
+        }
+        
         body {
             font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
         }
+        
         /* Custom scrollbar for better aesthetics */
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #1f2937;
+            background: var(--header-bg);
         }
         ::-webkit-scrollbar-thumb {
-            background: #4b5563;
+            background: var(--secondary-color);
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #6b7280;
+            background: var(--primary-color);
         }
+
         /* Styles for the carousel */
         .carousel-container {
             overflow: hidden;
@@ -42,64 +66,105 @@
             align-items: center;
             justify-content: center;
         }
+        
+        /* Custom Tailwind classes based on CSS variables */
+        .bg-custom-header {
+            background-color: var(--header-bg);
+        }
+        .bg-custom-card {
+            background-color: var(--card-bg);
+        }
+        .text-custom-primary {
+            color: var(--primary-color);
+        }
+        .text-custom-secondary {
+            color: var(--secondary-color);
+        }
+        .border-custom-primary {
+            border-color: var(--primary-color);
+        }
+        .bg-custom-primary {
+            background-color: var(--primary-color);
+        }
+        .bg-custom-secondary {
+            background-color: var(--secondary-color);
+        }
+        .hover-bg-custom-primary:hover {
+            background-color: var(--primary-color);
+        }
+        .hover-text-custom-primary:hover {
+            color: var(--primary-color);
+        }
+        
     </style>
 </head>
-<body class="bg-gray-900 text-gray-200">
+<body>
 
     <!-- Header Section -->
-    <header class="bg-gray-800 p-4 sticky top-0 z-50 shadow-lg">
+    <header class="bg-custom-header p-4 sticky top-0 z-50 shadow-lg">
         <nav class="container mx-auto flex justify-between items-center">
-            <a href="#hero" class="text-2xl font-bold text-teal-400 hover:text-teal-300 transition-colors">Saddam Hussain</a>
-            <div class="space-x-4 hidden md:flex">
-                <a href="#about" class="text-gray-300 hover:text-white transition-colors">About</a>
-                <a href="#projects" class="text-gray-300 hover:text-white transition-colors">Projects</a>
-                <a href="#skills" class="text-gray-300 hover:text-white transition-colors">Skills</a>
-                <a href="#contact" class="text-gray-300 hover:text-white transition-colors">Contact</a>
+            <a href="#hero" class="text-2xl font-bold text-custom-primary hover:text-custom-primary transition-colors">Saddam Hussain</a>
+            <div class="flex items-center space-x-4">
+                <div class="space-x-4 hidden md:flex">
+                    <a href="#about" class="text-custom-secondary hover:text-custom-primary transition-colors">About</a>
+                    <a href="#projects" class="text-custom-secondary hover:text-custom-primary transition-colors">Projects</a>
+                    <a href="#skills" class="text-custom-secondary hover:text-custom-primary transition-colors">Skills</a>
+                    <a href="#contact" class="text-custom-secondary hover:text-custom-primary transition-colors">Contact</a>
+                </div>
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="p-2 rounded-full bg-custom-card hover:bg-custom-secondary transition-colors">
+                    <svg id="moon-icon" class="h-6 w-6 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                    <svg id="sun-icon" class="h-6 w-6 text-yellow-500 hidden" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.52 7.52a.75.75 0 011.06 0l1.59 1.59a.75.75 0 01-1.06 1.06L7.52 8.58a.75.75 0 010-1.06zM3 12a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5H3.75A.75.75 0 013 12zM8.58 14.99a.75.75 0 011.06-1.06l1.59 1.59a.75.75 0 11-1.06 1.06l-1.59-1.59zM12 18a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V18a.75.75 0 01.75-.75zM14.99 15.42a.75.75 0 011.06 1.06l1.59-1.59a.75.75 0 01-1.06-1.06l-1.59 1.59zM18 12a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5H18.75A.75.75 0 0118 12zM14.99 8.58a.75.75 0 111.06-1.06l1.59 1.59a.75.75 0 01-1.06 1.06l-1.59-1.59z" />
+                    </svg>
+                </button>
+                <!-- Mobile Menu Button -->
+                <button id="menu-button" class="md:hidden p-2 text-custom-primary hover:text-custom-secondary">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
             </div>
-            <!-- Mobile Menu Button -->
-            <button id="menu-button" class="md:hidden text-gray-300 hover:text-white">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
-            </button>
         </nav>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden hidden bg-gray-800 p-4 space-y-2 mt-2 rounded-lg shadow-md">
-            <a href="#about" class="block text-gray-300 hover:text-white transition-colors">About</a>
-            <a href="#projects" class="block text-gray-300 hover:text-white transition-colors">Projects</a>
-            <a href="#skills" class="block text-gray-300 hover:text-white transition-colors">Skills</a>
-            <a href="#contact" class="block text-gray-300 hover:text-white transition-colors">Contact</a>
+        <div id="mobile-menu" class="md:hidden hidden bg-custom-header p-4 space-y-2 mt-2 rounded-lg shadow-md">
+            <a href="#about" class="block text-custom-secondary hover:text-custom-primary transition-colors">About</a>
+            <a href="#projects" class="block text-custom-secondary hover:text-custom-primary transition-colors">Projects</a>
+            <a href="#skills" class="block text-custom-secondary hover:text-custom-primary transition-colors">Skills</a>
+            <a href="#contact" class="block text-custom-secondary hover:text-custom-primary transition-colors">Contact</a>
         </div>
     </header>
 
     <main class="container mx-auto px-4 py-8">
 
         <!-- Hero Section -->
-        <section id="hero" class="text-center py-20 bg-gray-800 rounded-lg shadow-xl mb-12">
+        <section id="hero" class="text-center py-20 bg-custom-card rounded-lg shadow-xl mb-12">
             <!-- Profile Image (placeholder) -->
-            <img src="https://placehold.co/150x150/111827/cbd5e1?text=SH" alt="Saddam Hussain" class="rounded-full w-32 h-32 mx-auto mb-6 border-4 border-teal-400">
-            <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-2">Saddam Hussain</h1>
-            <h2 class="text-2xl sm:text-3xl font-semibold text-teal-400 mb-4">Web Developer - PHP/WordPress</h2>
-            <p class="max-w-2xl mx-auto text-lg text-gray-400">
+            <img src="https://placehold.co/150x150/111827/cbd5e1?text=SH" alt="Saddam Hussain" class="rounded-full w-32 h-32 mx-auto mb-6 border-4 border-custom-primary">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-custom-primary mb-2">Saddam Hussain</h1>
+            <h2 class="text-2xl sm:text-3xl font-semibold text-custom-primary mb-4">Web Developer - PHP/WordPress</h2>
+            <p class="max-w-2xl mx-auto text-lg text-custom-secondary">
                 A passionate WordPress and PHP developer with over 6 years of hands-on experience building custom themes, plugins, and scalable web solutions. Specializing in full-stack development with a focus on performance and user experience.
             </p>
             <div class="mt-8 flex justify-center space-x-4">
-                <a href="mailto:wordpress.saddam@gmail.com" class="bg-teal-500 text-white py-3 px-6 rounded-full font-bold shadow-lg hover:bg-teal-600 transition-colors">Email Me</a>
-                <a href="https://linkedin.com/in/saddam802216" target="_blank" class="bg-gray-700 text-white py-3 px-6 rounded-full font-bold shadow-lg hover:bg-gray-600 transition-colors">LinkedIn</a>
+                <a href="mailto:wordpress.saddam@gmail.com" class="bg-custom-primary text-white py-3 px-6 rounded-full font-bold shadow-lg hover:bg-custom-primary transition-colors">Email Me</a>
+                <a href="https://linkedin.com/in/saddam802216" target="_blank" class="bg-custom-secondary text-white py-3 px-6 rounded-full font-bold shadow-lg hover:bg-custom-primary transition-colors">LinkedIn</a>
             </div>
         </section>
         
         <!-- About Section -->
-        <section id="about" class="bg-gray-800 p-8 rounded-lg shadow-xl mb-12">
-            <h3 class="text-3xl font-bold text-white mb-6 border-b-2 border-teal-400 pb-2">About Me</h3>
-            <p class="text-gray-300 text-lg">
+        <section id="about" class="bg-custom-card p-8 rounded-lg shadow-xl mb-12">
+            <h3 class="text-3xl font-bold text-custom-primary mb-6 border-b-2 border-custom-primary pb-2">About Me</h3>
+            <p class="text-custom-secondary text-lg">
                 Seasoned Web Developer with over 6 years of professional experience in the IT and services industry. Expertise includes PHP, WordPress development, custom plugin and theme creation, MySQL, JavaScript, HTML, and CSS. I am dedicated to creating efficient, scalable, and user-friendly web solutions that meet the specific needs of clients and users. My journey in development is driven by a passion for continuous learning and a commitment to delivering high-quality results.
             </p>
         </section>
 
         <!-- Projects Section with Carousel -->
-        <section id="projects" class="bg-gray-800 p-8 rounded-lg shadow-xl mb-12">
-            <h3 class="text-3xl font-bold text-white mb-6 border-b-2 border-teal-400 pb-2 text-center">Featured Projects</h3>
+        <section id="projects" class="bg-custom-card p-8 rounded-lg shadow-xl mb-12">
+            <h3 class="text-3xl font-bold text-custom-primary mb-6 border-b-2 border-custom-primary pb-2 text-center">Featured Projects</h3>
             
             <div id="project-carousel" class="carousel-container relative w-full max-w-4xl mx-auto rounded-lg shadow-lg" style="height: 600px;">
                 <div id="carousel-track" class="carousel-track">
@@ -109,7 +174,7 @@
 
             <!-- Carousel Navigation -->
             <div class="flex justify-center items-center mt-6 space-x-4">
-                <button id="prev-btn" class="p-3 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-colors shadow-md">
+                <button id="prev-btn" class="p-3 bg-custom-secondary text-custom-primary rounded-full hover:bg-custom-primary hover:text-white transition-colors shadow-md">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                     </svg>
@@ -117,7 +182,7 @@
                 <div id="carousel-dots" class="flex space-x-2">
                     <!-- Dots will be dynamically injected here -->
                 </div>
-                <button id="next-btn" class="p-3 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-colors shadow-md">
+                <button id="next-btn" class="p-3 bg-custom-secondary text-custom-primary rounded-full hover:bg-custom-primary hover:text-white transition-colors shadow-md">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                     </svg>
@@ -126,39 +191,39 @@
         </section>
         
         <!-- Skills Section -->
-        <section id="skills" class="bg-gray-800 p-8 rounded-lg shadow-xl mb-12">
-            <h3 class="text-3xl font-bold text-white mb-6 border-b-2 border-teal-400 pb-2">Skills</h3>
+        <section id="skills" class="bg-custom-card p-8 rounded-lg shadow-xl mb-12">
+            <h3 class="text-3xl font-bold text-custom-primary mb-6 border-b-2 border-custom-primary pb-2">Skills</h3>
             <div class="flex flex-wrap gap-4">
-                <span class="bg-teal-500 text-white px-4 py-2 rounded-full shadow-md">PHP</span>
-                <span class="bg-teal-500 text-white px-4 py-2 rounded-full shadow-md">WordPress</span>
-                <span class="bg-teal-500 text-white px-4 py-2 rounded-full shadow-md">Custom Plugin & Theme</span>
-                <span class="bg-teal-500 text-white px-4 py-2 rounded-full shadow-md">MySQL</span>
-                <span class="bg-teal-500 text-white px-4 py-2 rounded-full shadow-md">JavaScript</span>
-                <span class="bg-teal-500 text-white px-4 py-2 rounded-full shadow-md">jQuery</span>
-                <span class="bg-teal-500 text-white px-4 py-2 rounded-full shadow-md">HTML</span>
-                <span class="bg-teal-500 text-white px-4 py-2 rounded-full shadow-md">CSS</span>
-                <span class="bg-teal-500 text-white px-4 py-2 rounded-full shadow-md">Git</span>
-                <span class="bg-teal-500 text-white px-4 py-2 rounded-full shadow-md">API</span>
-                <span class="bg-teal-500 text-white px-4 py-2 rounded-full shadow-md">Performance Optimization</span>
-                <span class="bg-teal-500 text-white px-4 py-2 rounded-full shadow-md">CodeIgniter</span>
+                <span class="bg-custom-primary text-white px-4 py-2 rounded-full shadow-md">PHP</span>
+                <span class="bg-custom-primary text-white px-4 py-2 rounded-full shadow-md">WordPress</span>
+                <span class="bg-custom-primary text-white px-4 py-2 rounded-full shadow-md">Custom Plugin & Theme</span>
+                <span class="bg-custom-primary text-white px-4 py-2 rounded-full shadow-md">MySQL</span>
+                <span class="bg-custom-primary text-white px-4 py-2 rounded-full shadow-md">JavaScript</span>
+                <span class="bg-custom-primary text-white px-4 py-2 rounded-full shadow-md">jQuery</span>
+                <span class="bg-custom-primary text-white px-4 py-2 rounded-full shadow-md">HTML</span>
+                <span class="bg-custom-primary text-white px-4 py-2 rounded-full shadow-md">CSS</span>
+                <span class="bg-custom-primary text-white px-4 py-2 rounded-full shadow-md">Git</span>
+                <span class="bg-custom-primary text-white px-4 py-2 rounded-full shadow-md">API</span>
+                <span class="bg-custom-primary text-white px-4 py-2 rounded-full shadow-md">Performance Optimization</span>
+                <span class="bg-custom-primary text-white px-4 py-2 rounded-full shadow-md">CodeIgniter</span>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="bg-gray-800 p-8 rounded-lg shadow-xl text-center">
-            <h3 class="text-3xl font-bold text-white mb-6 border-b-2 border-teal-400 pb-2">Contact Me</h3>
-            <p class="text-lg text-gray-300 mb-4">
+        <section id="contact" class="bg-custom-card p-8 rounded-lg shadow-xl text-center">
+            <h3 class="text-3xl font-bold text-custom-primary mb-6 border-b-2 border-custom-primary pb-2">Contact Me</h3>
+            <p class="text-lg text-custom-secondary mb-4">
                 I'm currently open to new opportunities. Feel free to get in touch!
             </p>
             <div class="flex flex-col items-center space-y-4 md:space-y-0 md:flex-row md:justify-center md:space-x-8">
-                <a href="mailto:wordpress.saddam@gmail.com" class="flex items-center space-x-2 text-lg text-teal-400 hover:text-teal-300 transition-colors">
+                <a href="mailto:wordpress.saddam@gmail.com" class="flex items-center space-x-2 text-lg text-custom-primary hover:text-custom-secondary transition-colors">
                     <!-- Email Icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 8v2a2 2 0 002 2h14a2 2 0 002-2v-2" />
                     </svg>
                     <span>wordpress.saddam@gmail.com</span>
                 </a>
-                <a href="https://linkedin.com/in/saddam802216" target="_blank" class="flex items-center space-x-2 text-lg text-teal-400 hover:text-teal-300 transition-colors">
+                <a href="https://linkedin.com/in/saddam802216" target="_blank" class="flex items-center space-x-2 text-lg text-custom-primary hover:text-custom-secondary transition-colors">
                     <!-- LinkedIn Icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72c0-.95-.79-1.72-1.77-1.72zM7.18 20.45H3.61V9.06h3.57v11.39zM5.39 7.42c-1.19 0-2.16-.96-2.16-2.16s.97-2.16 2.16-2.16 2.16.96 2.16 2.16-.97 2.16-2.16 2.16zM20.45 20.45h-3.57v-5.6c0-1.34-.02-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7H9.28V9.06h3.43v1.57h.05c.48-.9 1.63-1.85 3.39-1.85 3.63 0 4.31 2.39 4.31 5.49v6.18z"/>
@@ -171,7 +236,7 @@
     </main>
 
     <!-- Footer Section -->
-    <footer class="bg-gray-800 text-center p-4 mt-12 text-gray-400">
+    <footer class="bg-custom-header text-center p-4 mt-12 text-custom-secondary">
         <p>&copy; 2024 Saddam Hussain. All Rights Reserved.</p>
     </footer>
 
@@ -186,6 +251,43 @@
             item.addEventListener('click', () => {
                 document.getElementById('mobile-menu').classList.add('hidden');
             });
+        });
+
+        // Theme Toggle functionality
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const moonIcon = document.getElementById('moon-icon');
+        const sunIcon = document.getElementById('sun-icon');
+        const body = document.body;
+
+        const prefersLight = window.matchMedia('(prefers-color-scheme: light)');
+
+        function applyTheme(theme) {
+            if (theme === 'light') {
+                body.classList.add('light-mode');
+                moonIcon.classList.add('hidden');
+                sunIcon.classList.remove('hidden');
+            } else {
+                body.classList.remove('light-mode');
+                moonIcon.classList.remove('hidden');
+                sunIcon.classList.add('hidden');
+            }
+        }
+
+        // Check for saved theme preference in local storage or system preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            applyTheme(savedTheme);
+        } else {
+            // Default to dark mode unless system prefers light
+            applyTheme(prefersLight.matches ? 'light' : 'dark');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = body.classList.contains('light-mode') ? 'light' : 'dark';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            localStorage.setItem('theme', newTheme);
+            applyTheme(newTheme);
         });
 
         // Carousel functionality
@@ -243,12 +345,12 @@
             const link = document.createElement('a');
             link.href = project.url;
             link.target = "_blank";
-            link.className = "flex flex-col items-center p-6 bg-gray-900 rounded-lg shadow-inner h-full w-full justify-center";
+            link.className = "flex flex-col items-center p-6 bg-custom-card rounded-lg shadow-inner h-full w-full justify-center";
 
             link.innerHTML = `
-                <img src="${project.image}" alt="${project.name}" class="rounded-lg shadow-md w-full max-h-80 object-cover border-2 border-teal-400">
-                <h4 class="text-2xl font-semibold text-teal-400 mt-6">${project.name}</h4>
-                <p class="text-lg text-gray-300 text-center max-w-lg mt-2">${project.description}</p>
+                <img src="${project.image}" alt="${project.name}" class="rounded-lg shadow-md w-full max-h-80 object-cover border-2 border-custom-primary">
+                <h4 class="text-2xl font-semibold text-custom-primary mt-6">${project.name}</h4>
+                <p class="text-lg text-custom-secondary text-center max-w-lg mt-2">${project.description}</p>
             `;
             item.appendChild(link);
             return item;
@@ -256,9 +358,9 @@
 
         function createDot(index) {
             const dot = document.createElement('div');
-            dot.className = `w-3 h-3 rounded-full bg-gray-600 cursor-pointer transition-colors hover:bg-teal-400`;
+            dot.className = `w-3 h-3 rounded-full bg-custom-secondary cursor-pointer transition-colors hover:bg-custom-primary`;
             if (index === currentIndex) {
-                dot.classList.add('bg-teal-400');
+                dot.classList.add('bg-custom-primary');
             }
             dot.addEventListener('click', () => {
                 showProject(index);
@@ -291,11 +393,11 @@
             const dots = dotsContainer.children;
             for (let i = 0; i < dots.length; i++) {
                 if (i === currentIndex) {
-                    dots[i].classList.add('bg-teal-400');
-                    dots[i].classList.remove('bg-gray-600');
+                    dots[i].classList.add('bg-custom-primary');
+                    dots[i].classList.remove('bg-custom-secondary');
                 } else {
-                    dots[i].classList.add('bg-gray-600');
-                    dots[i].classList.remove('bg-teal-400');
+                    dots[i].classList.add('bg-custom-secondary');
+                    dots[i].classList.remove('bg-custom-primary');
                 }
             }
         }
