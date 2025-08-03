@@ -1,85 +1,342 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Experienced WordPress & PHP developer portfolio of Saddam Hussain.">
-  <title>Saddam Hussain | WordPress Developer</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saddam Hussain | Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4b5563;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6b7280;
+        }
+        /* Styles for the carousel */
+        .carousel-container {
+            overflow: hidden;
+            position: relative;
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.7s ease-in-out;
+            height: 100%;
+        }
+        .carousel-item {
+            flex-shrink: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
 </head>
-<body>
-  <header>
-    <div class="container">
-      <h1>Saddam Hussain</h1>
-      <p>WordPress & PHP Developer with 6+ Years of Experience</p>
-    </div>
-  </header>
+<body class="bg-gray-900 text-gray-200">
 
-  <nav>
-    <div class="container">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
-
-  <section id="about" class="container">
-    <h2>About Me</h2>
-    <p>I am a passionate WordPress and PHP developer with over 6 years of hands-on experience building custom themes, plugins, and scalable web solutions. I specialize in full-stack development with a focus on performance and user experience.</p>
-  </section>
-
-  <section id="projects" class="container">
-    <h2>Highlighted Projects</h2>
-    <div class="carousel">
-      <div class="carousel-track">
-        <div class="card">
-          <h3>Conscent Paywall</h3>
-          <p>WordPress plugin for paywall and login features for publishers.</p>
-          <a href="https://wordpress.org/plugins/conscent-paywall" target="_blank">View Plugin</a>
+    <!-- Header Section -->
+    <header class="bg-gray-800 p-4 sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold text-teal-400 hover:text-teal-300 transition-colors">Saddam Hussain</a>
+            <div class="space-x-4 hidden md:flex">
+                <a href="#about" class="text-gray-300 hover:text-white transition-colors">About</a>
+                <a href="#projects" class="text-gray-300 hover:text-white transition-colors">Projects</a>
+                <a href="#skills" class="text-gray-300 hover:text-white transition-colors">Skills</a>
+                <a href="#contact" class="text-gray-300 hover:text-white transition-colors">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="menu-button" class="md:hidden text-gray-300 hover:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-gray-800 p-4 space-y-2 mt-2 rounded-lg shadow-md">
+            <a href="#about" class="block text-gray-300 hover:text-white transition-colors">About</a>
+            <a href="#projects" class="block text-gray-300 hover:text-white transition-colors">Projects</a>
+            <a href="#skills" class="block text-gray-300 hover:text-white transition-colors">Skills</a>
+            <a href="#contact" class="block text-gray-300 hover:text-white transition-colors">Contact</a>
         </div>
-        <div class="card">
-          <h3>MKena</h3>
-          <p>Auto parts eCommerce store with manufacturer-based catalog.</p>
-          <a href="https://mkena.com" target="_blank">Visit Site</a>
-        </div>
-        <div class="card">
-          <h3>Knuffel</h3>
-          <p>Fabric store with product filters and admin panel for management.</p>
-          <a href="https://knuffel.ch" target="_blank">Visit Site</a>
-        </div>
-        <div class="card">
-          <h3>Bright Jobs</h3>
-          <p>Job listing site with filters by location and category.</p>
-          <a href="https://bright-jobs.de" target="_blank">Visit Site</a>
-        </div>
-        <div class="card">
-          <h3>Primas Software</h3>
-          <p>Central digital storage and visualization of private data.</p>
-          <a href="https://primas-software-international.com/" target="_blank">Visit Site</a>
-        </div>
-      </div>
-    </div>
-  </section>
+    </header>
 
-  <section id="contact" class="container">
-    <h2>Contact</h2>
-    <p><i class="fas fa-envelope"></i> wordpress.saddam@gmail.com</p>
-    <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/saddam802216/" target="_blank">linkedin.com/in/saddam802216</a></p>
-  </section>
+    <main class="container mx-auto px-4 py-8">
 
-  <footer>
-    <p>© 2025 Saddam Hussain. Built with ❤️</p>
-  </footer>
+        <!-- Hero Section -->
+        <section id="hero" class="text-center py-20 bg-gray-800 rounded-lg shadow-xl mb-12">
+            <!-- Profile Image (placeholder) -->
+            <img src="https://placehold.co/150x150/111827/cbd5e1?text=SH" alt="Saddam Hussain" class="rounded-full w-32 h-32 mx-auto mb-6 border-4 border-teal-400">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-2">Saddam Hussain</h1>
+            <h2 class="text-2xl sm:text-3xl font-semibold text-teal-400 mb-4">Web Developer - PHP/WordPress</h2>
+            <p class="max-w-2xl mx-auto text-lg text-gray-400">
+                A passionate WordPress and PHP developer with over 6 years of hands-on experience building custom themes, plugins, and scalable web solutions. Specializing in full-stack development with a focus on performance and user experience.
+            </p>
+            <div class="mt-8 flex justify-center space-x-4">
+                <a href="mailto:wordpress.saddam@gmail.com" class="bg-teal-500 text-white py-3 px-6 rounded-full font-bold shadow-lg hover:bg-teal-600 transition-colors">Email Me</a>
+                <a href="https://linkedin.com/in/saddam802216" target="_blank" class="bg-gray-700 text-white py-3 px-6 rounded-full font-bold shadow-lg hover:bg-gray-600 transition-colors">LinkedIn</a>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section id="about" class="bg-gray-800 p-8 rounded-lg shadow-xl mb-12">
+            <h3 class="text-3xl font-bold text-white mb-6 border-b-2 border-teal-400 pb-2">About Me</h3>
+            <p class="text-gray-300 text-lg">
+                Seasoned Web Developer with over 6 years of professional experience in the IT and services industry. Expertise includes PHP, WordPress development, custom plugin and theme creation, MySQL, JavaScript, HTML, and CSS. I am dedicated to creating efficient, scalable, and user-friendly web solutions that meet the specific needs of clients and users. My journey in development is driven by a passion for continuous learning and a commitment to delivering high-quality results.
+            </p>
+        </section>
 
-  <script>
-    const track = document.querySelector('.carousel-track');
-    let scrollAmount = 0;
-    setInterval(() => {
-      scrollAmount += 300;
-      if (scrollAmount >= track.scrollWidth - track.clientWidth) scrollAmount = 0;
-      track.scrollTo({ left: scrollAmount, behavior: 'smooth' });
-    }, 3000);
-  </script>
+        <!-- Projects Section with Carousel -->
+        <section id="projects" class="bg-gray-800 p-8 rounded-lg shadow-xl mb-12">
+            <h3 class="text-3xl font-bold text-white mb-6 border-b-2 border-teal-400 pb-2 text-center">Featured Projects</h3>
+            
+            <div id="project-carousel" class="carousel-container relative w-full max-w-4xl mx-auto rounded-lg shadow-lg" style="height: 600px;">
+                <div id="carousel-track" class="carousel-track">
+                    <!-- Project items will be dynamically injected here -->
+                </div>
+            </div>
+
+            <!-- Carousel Navigation -->
+            <div class="flex justify-center items-center mt-6 space-x-4">
+                <button id="prev-btn" class="p-3 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-colors shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <div id="carousel-dots" class="flex space-x-2">
+                    <!-- Dots will be dynamically injected here -->
+                </div>
+                <button id="next-btn" class="p-3 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-colors shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+        </section>
+        
+        <!-- Skills Section -->
+        <section id="skills" class="bg-gray-800 p-8 rounded-lg shadow-xl mb-12">
+            <h3 class="text-3xl font-bold text-white mb-6 border-b-2 border-teal-400 pb-2">Skills</h3>
+            <div class="flex flex-wrap gap-4">
+                <span class="bg-teal-500 text-white px-4 py-2 rounded-full shadow-md">PHP</span>
+                <span class="bg-teal-500 text-white px-4 py-2 rounded-full shadow-md">WordPress</span>
+                <span class="bg-teal-500 text-white px-4 py-2 rounded-full shadow-md">Custom Plugin & Theme</span>
+                <span class="bg-teal-500 text-white px-4 py-2 rounded-full shadow-md">MySQL</span>
+                <span class="bg-teal-500 text-white px-4 py-2 rounded-full shadow-md">JavaScript</span>
+                <span class="bg-teal-500 text-white px-4 py-2 rounded-full shadow-md">jQuery</span>
+                <span class="bg-teal-500 text-white px-4 py-2 rounded-full shadow-md">HTML</span>
+                <span class="bg-teal-500 text-white px-4 py-2 rounded-full shadow-md">CSS</span>
+                <span class="bg-teal-500 text-white px-4 py-2 rounded-full shadow-md">Git</span>
+                <span class="bg-teal-500 text-white px-4 py-2 rounded-full shadow-md">API</span>
+                <span class="bg-teal-500 text-white px-4 py-2 rounded-full shadow-md">Performance Optimization</span>
+                <span class="bg-teal-500 text-white px-4 py-2 rounded-full shadow-md">CodeIgniter</span>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="bg-gray-800 p-8 rounded-lg shadow-xl text-center">
+            <h3 class="text-3xl font-bold text-white mb-6 border-b-2 border-teal-400 pb-2">Contact Me</h3>
+            <p class="text-lg text-gray-300 mb-4">
+                I'm currently open to new opportunities. Feel free to get in touch!
+            </p>
+            <div class="flex flex-col items-center space-y-4 md:space-y-0 md:flex-row md:justify-center md:space-x-8">
+                <a href="mailto:wordpress.saddam@gmail.com" class="flex items-center space-x-2 text-lg text-teal-400 hover:text-teal-300 transition-colors">
+                    <!-- Email Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 8v2a2 2 0 002 2h14a2 2 0 002-2v-2" />
+                    </svg>
+                    <span>wordpress.saddam@gmail.com</span>
+                </a>
+                <a href="https://linkedin.com/in/saddam802216" target="_blank" class="flex items-center space-x-2 text-lg text-teal-400 hover:text-teal-300 transition-colors">
+                    <!-- LinkedIn Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72c0-.95-.79-1.72-1.77-1.72zM7.18 20.45H3.61V9.06h3.57v11.39zM5.39 7.42c-1.19 0-2.16-.96-2.16-2.16s.97-2.16 2.16-2.16 2.16.96 2.16 2.16-.97 2.16-2.16 2.16zM20.45 20.45h-3.57v-5.6c0-1.34-.02-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7H9.28V9.06h3.43v1.57h.05c.48-.9 1.63-1.85 3.39-1.85 3.63 0 4.31 2.39 4.31 5.49v6.18z"/>
+                    </svg>
+                    <span>linkedin.com/in/saddam802216</span>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-center p-4 mt-12 text-gray-400">
+        <p>&copy; 2024 Saddam Hussain. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript for mobile menu and carousel functionality -->
+    <script>
+        document.getElementById('menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(item => {
+            item.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Carousel functionality
+        const projects = [
+            {
+                name: 'WordPress Plugin: SORTD',
+                image: 'https://placehold.co/800x400/374151/D1D5DB?text=SORTD+Plugin+Screenshot',
+                description: 'A WordPress plugin for advanced sorting functionality that improves user experience on websites.',
+                url: 'https://wordpress.org/plugins/sortd/'
+            },
+            {
+                name: 'WordPress Plugin: ConsCent Paywall',
+                image: 'https://placehold.co/800x400/374151/D1D5DB?text=ConsCent+Paywall+Screenshot',
+                description: 'A WordPress plugin for subscription and user management, including paywalls and metered banners.',
+                url: 'https://wordpress.org/plugins/conscent-paywall/'
+            },
+            {
+                name: 'Universus Consulting',
+                image: 'https://placehold.co/800x400/374151/D1D5DB?text=Universus+Consulting+Website',
+                description: 'A professional website developed for business consulting services.',
+                url: 'https://www.universusconsulting.com/'
+            },
+            {
+                name: 'MKena',
+                image: 'https://placehold.co/800x400/374151/D1D5DB?text=MKena+Website',
+                description: 'An online store for auto spare parts driven by an original car manufacturing catalog.',
+                url: '#' // Placeholder URL
+            },
+            {
+                name: 'Knuffel',
+                image: 'https://placehold.co/800x400/374151/D1D5DB?text=Knuffel+Website',
+                description: 'An online store for colorful fabrics, with a full admin panel for product management.',
+                url: '#' // Placeholder URL
+            },
+            {
+                name: 'Bright-Jobs',
+                image: 'https://placehold.co/800x400/374151/D1D5DB?text=Bright-Jobs+Website',
+                description: 'A job seeker platform allowing users to search and filter jobs by various criteria.',
+                url: '#' // Placeholder URL
+            }
+        ];
+
+        let currentIndex = 0;
+        let autoSlideInterval;
+        const carousel = document.getElementById('project-carousel');
+        const carouselTrack = document.getElementById('carousel-track');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const dotsContainer = document.getElementById('carousel-dots');
+
+        function createCarouselItem(project) {
+            const item = document.createElement('div');
+            item.className = 'carousel-item';
+
+            const link = document.createElement('a');
+            link.href = project.url;
+            link.target = "_blank";
+            link.className = "flex flex-col items-center p-6 bg-gray-900 rounded-lg shadow-inner h-full w-full justify-center";
+
+            link.innerHTML = `
+                <img src="${project.image}" alt="${project.name}" class="rounded-lg shadow-md w-full max-h-80 object-cover border-2 border-teal-400">
+                <h4 class="text-2xl font-semibold text-teal-400 mt-6">${project.name}</h4>
+                <p class="text-lg text-gray-300 text-center max-w-lg mt-2">${project.description}</p>
+            `;
+            item.appendChild(link);
+            return item;
+        }
+
+        function createDot(index) {
+            const dot = document.createElement('div');
+            dot.className = `w-3 h-3 rounded-full bg-gray-600 cursor-pointer transition-colors hover:bg-teal-400`;
+            if (index === currentIndex) {
+                dot.classList.add('bg-teal-400');
+            }
+            dot.addEventListener('click', () => {
+                showProject(index);
+                resetAutoSlide();
+            });
+            return dot;
+        }
+
+        function renderCarousel() {
+            carouselTrack.innerHTML = '';
+            dotsContainer.innerHTML = '';
+
+            projects.forEach((project, index) => {
+                carouselTrack.appendChild(createCarouselItem(project));
+                dotsContainer.appendChild(createDot(index));
+            });
+            
+            updateDots();
+            startAutoSlide();
+        }
+
+        function showProject(newIndex) {
+            const offset = -newIndex * 100;
+            carouselTrack.style.transform = `translateX(${offset}%)`;
+            currentIndex = newIndex;
+            updateDots();
+        }
+
+        function updateDots() {
+            const dots = dotsContainer.children;
+            for (let i = 0; i < dots.length; i++) {
+                if (i === currentIndex) {
+                    dots[i].classList.add('bg-teal-400');
+                    dots[i].classList.remove('bg-gray-600');
+                } else {
+                    dots[i].classList.add('bg-gray-600');
+                    dots[i].classList.remove('bg-teal-400');
+                }
+            }
+        }
+
+        function nextSlide() {
+            let newIndex = currentIndex + 1;
+            if (newIndex >= projects.length) {
+                newIndex = 0;
+            }
+            showProject(newIndex);
+        }
+
+        function prevSlide() {
+            let newIndex = currentIndex - 1;
+            if (newIndex < 0) {
+                newIndex = projects.length - 1;
+            }
+            showProject(newIndex);
+        }
+
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+        }
+
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            startAutoSlide();
+        }
+
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetAutoSlide();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            resetAutoSlide();
+        });
+
+        // Initialize carousel on page load
+        window.addEventListener('DOMContentLoaded', renderCarousel);
+    </script>
 </body>
 </html>
