@@ -1,244 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saddam Hussain | Portfolio</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        /* Custom scrollbar for better aesthetics */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #1f2937;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #4b5563;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #6b7280;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Experienced WordPress & PHP developer portfolio of Saddam Hussain.">
+  <title>Saddam Hussain | WordPress Developer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
-<body class="bg-gray-900 text-gray-200">
+<body>
+  <header>
+    <div class="container">
+      <h1>Saddam Hussain</h1>
+      <p>WordPress & PHP Developer with 6+ Years of Experience</p>
+    </div>
+  </header>
 
-    <!-- Header Section -->
-    <header class="bg-gray-800 p-4 sticky top-0 z-50 shadow-lg">
-        <nav class="container mx-auto flex justify-between items-center">
-            <a href="#hero" class="text-2xl font-bold text-teal-400 hover:text-teal-300 transition-colors">Saddam Hussain</a>
-            <div class="space-x-4 hidden md:flex">
-                <a href="#about" class="text-gray-300 hover:text-white transition-colors">About</a>
-                <a href="#experience" class="text-gray-300 hover:text-white transition-colors">Experience</a>
-                <a href="#projects" class="text-gray-300 hover:text-white transition-colors">Projects</a>
-                <a href="#skills" class="text-gray-300 hover:text-white transition-colors">Skills</a>
-                <a href="#contact" class="text-gray-300 hover:text-white transition-colors">Contact</a>
-            </div>
-            <!-- Mobile Menu Button -->
-            <button id="menu-button" class="md:hidden text-gray-300 hover:text-white">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
-            </button>
-        </nav>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden hidden bg-gray-800 p-4 space-y-2 mt-2 rounded-lg shadow-md">
-            <a href="#about" class="block text-gray-300 hover:text-white transition-colors">About</a>
-            <a href="#experience" class="block text-gray-300 hover:text-white transition-colors">Experience</a>
-            <a href="#projects" class="block text-gray-300 hover:text-white transition-colors">Projects</a>
-            <a href="#skills" class="block text-gray-300 hover:text-white transition-colors">Skills</a>
-            <a href="#contact" class="block text-gray-300 hover:text-white transition-colors">Contact</a>
+  <nav>
+    <div class="container">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <section id="about" class="container">
+    <h2>About Me</h2>
+    <p>I am a passionate WordPress and PHP developer with over 6 years of hands-on experience building custom themes, plugins, and scalable web solutions. I specialize in full-stack development with a focus on performance and user experience.</p>
+  </section>
+
+  <section id="projects" class="container">
+    <h2>Highlighted Projects</h2>
+    <div class="carousel">
+      <div class="carousel-track">
+        <div class="card">
+          <h3>Conscent Paywall</h3>
+          <p>WordPress plugin for paywall and login features for publishers.</p>
+          <a href="https://wordpress.org/plugins/conscent-paywall" target="_blank">View Plugin</a>
         </div>
-    </header>
+        <div class="card">
+          <h3>MKena</h3>
+          <p>Auto parts eCommerce store with manufacturer-based catalog.</p>
+          <a href="https://mkena.com" target="_blank">Visit Site</a>
+        </div>
+        <div class="card">
+          <h3>Knuffel</h3>
+          <p>Fabric store with product filters and admin panel for management.</p>
+          <a href="https://knuffel.ch" target="_blank">Visit Site</a>
+        </div>
+        <div class="card">
+          <h3>Bright Jobs</h3>
+          <p>Job listing site with filters by location and category.</p>
+          <a href="https://bright-jobs.de" target="_blank">Visit Site</a>
+        </div>
+        <div class="card">
+          <h3>Primas Software</h3>
+          <p>Central digital storage and visualization of private data.</p>
+          <a href="https://primas-software-international.com/" target="_blank">Visit Site</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <main class="container mx-auto px-4 py-8">
+  <section id="contact" class="container">
+    <h2>Contact</h2>
+    <p><i class="fas fa-envelope"></i> wordpress.saddam@gmail.com</p>
+    <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/saddam802216/" target="_blank">linkedin.com/in/saddam802216</a></p>
+  </section>
 
-        <!-- Hero Section -->
-        <section id="hero" class="text-center py-20 bg-gray-800 rounded-lg shadow-xl mb-12">
-            <!-- The provided resume has an image, but due to security restrictions and the nature of the environment, we cannot directly use an image from an uploaded file. A placeholder will be used instead. -->
-            <!-- Profile Image (placeholder) -->
-            <img src="https://placehold.co/150x150/111827/cbd5e1?text=SH" alt="Saddam Hussain" class="rounded-full w-32 h-32 mx-auto mb-6 border-4 border-teal-400">
-            <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-2">Saddam Hussain</h1>
-            <h2 class="text-2xl sm:text-3xl font-semibold text-teal-400 mb-4">Web Developer - PHP/WordPress</h2>
-            <p class="max-w-2xl mx-auto text-lg text-gray-400">
-                A passionate WordPress and PHP developer with over 6 years of hands-on experience building custom themes, plugins, and scalable web solutions. Specializing in full-stack development with a focus on performance and user experience.
-            </p>
-            <div class="mt-8 flex justify-center space-x-4">
-                <a href="mailto:saddam802216@gmail.com" class="bg-teal-500 text-white py-3 px-6 rounded-full font-bold shadow-lg hover:bg-teal-600 transition-colors">Email Me</a>
-                <a href="https://linkedin.com/in/saddam802216" target="_blank" class="bg-gray-700 text-white py-3 px-6 rounded-full font-bold shadow-lg hover:bg-gray-600 transition-colors">LinkedIn</a>
-            </div>
-        </section>
-        
-        <!-- About Section -->
-        <section id="about" class="bg-gray-800 p-8 rounded-lg shadow-xl mb-12">
-            <h3 class="text-3xl font-bold text-white mb-6 border-b-2 border-teal-400 pb-2">About Me</h3>
-            <p class="text-gray-300 text-lg">
-                Seasoned Web Developer with over 6 years of professional experience in the IT and services industry. Expertise includes PHP, WordPress development, custom plugin and theme creation, MySQL, JavaScript, HTML, and CSS. I am dedicated to creating efficient, scalable, and user-friendly web solutions that meet the specific needs of clients and users. My journey in development is driven by a passion for continuous learning and a commitment to delivering high-quality results.
-            </p>
-        </section>
+  <footer>
+    <p>© 2025 Saddam Hussain. Built with ❤️</p>
+  </footer>
 
-        <!-- Experience Section -->
-        <section id="experience" class="bg-gray-800 p-8 rounded-lg shadow-xl mb-12">
-            <h3 class="text-3xl font-bold text-white mb-6 border-b-2 border-teal-400 pb-2">Work Experience</h3>
-            
-            <!-- TSB Media Venture Pvt. Ltd. -->
-            <div class="mb-8">
-                <h4 class="text-2xl font-semibold text-teal-400">Software Engineer</h4>
-                <p class="text-lg text-gray-300">TSB Media Venture Pvt. Ltd. | 02/2024 - Present</p>
-                <ul class="list-disc list-inside mt-2 text-gray-400 space-y-1">
-                    <li>Developed a WordPress plugin from scratch for subscription management, user login, and activity tracking.</li>
-                    <li>Implemented features including paywalls, metered banners, subscription plans, and payment gateways.</li>
-                    <li>Designed and implemented subscription and login modules for Cordova applications.</li>
-                </ul>
-            </div>
-            
-            <!-- LeanPort Software Pvt. Ltd. -->
-            <div class="mb-8">
-                <h4 class="text-2xl font-semibold text-teal-400">Web Developer</h4>
-                <p class="text-lg text-gray-300">LeanPort Software Pvt. Ltd. | 11/2020 - 01/2024</p>
-                <ul class="list-disc list-inside mt-2 text-gray-400 space-y-1">
-                    <li>Developed and maintained web applications using PHP, WordPress, jQuery, and MySQL.</li>
-                    <li>Worked on live projects like Polit Jobs, Knuffel, Mkena, Bright-Jobs, and Am-Pioneers.</li>
-                </ul>
-            </div>
-
-            <!-- WDMTech Pvt. Ltd. -->
-            <div>
-                <h4 class="text-2xl font-semibold text-teal-400">Web Developer</h4>
-                <p class="text-lg text-gray-300">WDMTech Pvt. Ltd. | 12/2018 - 02/2020</p>
-                <ul class="list-disc list-inside mt-2 text-gray-400 space-y-1">
-                    <li>Developed web applications and CRM systems using PHP, HTML, CSS, jQuery, and MySQL.</li>
-                    <li>Collaborated with designers and testers to create user-friendly and bug-free applications.</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Projects Section (UPDATED) -->
-        <section id="projects" class="bg-gray-800 p-8 rounded-lg shadow-xl mb-12">
-            <h3 class="text-3xl font-bold text-white mb-6 border-b-2 border-teal-400 pb-2">Projects</h3>
-
-            <!-- SORTD -->
-            <div class="mb-8">
-                <h4 class="text-2xl font-semibold text-teal-400">WordPress Plugin: SORTD</h4>
-                <p class="text-lg text-gray-300">A WordPress plugin for advanced sorting functionality.</p>
-                <p class="text-sm text-gray-500 mt-1">View project: <a href="https://wordpress.org/plugins/sortd/" target="_blank" class="text-teal-400 hover:text-teal-300 transition-colors">https://wordpress.org/plugins/sortd/</a></p>
-            </div>
-            
-            <!-- ConsCent Paywall -->
-            <div class="mb-8">
-                <h4 class="text-2xl font-semibold text-teal-400">WordPress Plugin: ConsCent Paywall</h4>
-                <p class="text-lg text-gray-300">A WordPress plugin for subscription and user management.</p>
-                <p class="text-sm text-gray-500 mt-1">View project: <a href="https://wordpress.org/plugins/conscent-paywall/" target="_blank" class="text-teal-400 hover:text-teal-300 transition-colors">https://wordpress.org/plugins/conscent-paywall/</a></p>
-            </div>
-            
-            <!-- Universus Consulting -->
-            <div class="mb-8">
-                <h4 class="text-2xl font-semibold text-teal-400">Universus Consulting</h4>
-                <p class="text-lg text-gray-300">Developed a professional website for business consulting services.</p>
-                <p class="text-sm text-gray-500 mt-1">View project: <a href="https://www.universusconsulting.com/" target="_blank" class="text-teal-400 hover:text-teal-300 transition-colors">https://www.universusconsulting.com/</a></p>
-            </div>
-
-            <!-- MKena -->
-            <div class="mb-8">
-                <h4 class="text-2xl font-semibold text-teal-400">MKena</h4>
-                <p class="text-lg text-gray-300">Online store for auto spare parts.</p>
-                <ul class="list-disc list-inside mt-2 text-gray-400 space-y-1">
-                    <li>**Technology:** PHP, MySQL, jQuery, HTML, CSS.</li>
-                    <li>**Description:** An advanced online store driven by an original car manufacturing catalog for accurate part searching and ordering.</li>
-                </ul>
-            </div>
-
-            <!-- Knuffel -->
-            <div class="mb-8">
-                <h4 class="text-2xl font-semibold text-teal-400">Knuffel</h4>
-                <p class="text-lg text-gray-300">Online store for colorful fabrics.</p>
-                <ul class="list-disc list-inside mt-2 text-gray-400 space-y-1">
-                    <li>**Technology:** PHP, WordPress, MySQL, jQuery, HTML, CSS.</li>
-                    <li>**Description:** A platform where an admin can manage products and users can filter, search, and order fabrics.</li>
-                </ul>
-            </div>
-
-            <!-- Bright-Jobs -->
-            <div>
-                <h4 class="text-2xl font-semibold text-teal-400">Bright-Jobs</h4>
-                <p class="text-lg text-gray-300">Job seeker services platform.</p>
-                <ul class="list-disc list-inside mt-2 text-gray-400 space-y-1">
-                    <li>**Technology:** Wordpress, PHP, API, Custom Plugin and Theme, MySQL, jQuery, HTML, CSS.</li>
-                    <li>**Description:** Allows users to search and filter jobs by location, category, and group, and apply for them.</li>
-                </ul>
-            </div>
-
-        </section>
-        
-        <!-- Skills Section -->
-        <section id="skills" class="bg-gray-800 p-8 rounded-lg shadow-xl mb-12">
-            <h3 class="text-3xl font-bold text-white mb-6 border-b-2 border-teal-400 pb-2">Skills</h3>
-            <div class="flex flex-wrap gap-4">
-                <span class="bg-teal-500 text-white px-4 py-2 rounded-full shadow-md">PHP</span>
-                <span class="bg-teal-500 text-white px-4 py-2 rounded-full shadow-md">WordPress</span>
-                <span class="bg-teal-500 text-white px-4 py-2 rounded-full shadow-md">Custom Plugin & Theme</span>
-                <span class="bg-teal-500 text-white px-4 py-2 rounded-full shadow-md">MySQL</span>
-                <span class="bg-teal-500 text-white px-4 py-2 rounded-full shadow-md">JavaScript</span>
-                <span class="bg-teal-500 text-white px-4 py-2 rounded-full shadow-md">jQuery</span>
-                <span class="bg-teal-500 text-white px-4 py-2 rounded-full shadow-md">HTML</span>
-                <span class="bg-teal-500 text-white px-4 py-2 rounded-full shadow-md">CSS</span>
-                <span class="bg-teal-500 text-white px-4 py-2 rounded-full shadow-md">Git</span>
-                <span class="bg-teal-500 text-white px-4 py-2 rounded-full shadow-md">API</span>
-                <span class="bg-teal-500 text-white px-4 py-2 rounded-full shadow-md">Performance Optimization</span>
-                <span class="bg-teal-500 text-white px-4 py-2 rounded-full shadow-md">CodeIgniter</span>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="bg-gray-800 p-8 rounded-lg shadow-xl text-center">
-            <h3 class="text-3xl font-bold text-white mb-6 border-b-2 border-teal-400 pb-2">Contact Me</h3>
-            <p class="text-lg text-gray-300 mb-4">
-                I'm currently open to new opportunities. Feel free to get in touch!
-            </p>
-            <div class="flex flex-col items-center space-y-4 md:space-y-0 md:flex-row md:justify-center md:space-x-8">
-                <a href="mailto:saddam802216@gmail.com" class="flex items-center space-x-2 text-lg text-teal-400 hover:text-teal-300 transition-colors">
-                    <!-- Email Icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 8v2a2 2 0 002 2h14a2 2 0 002-2v-2" />
-                    </svg>
-                    <span>saddam802216@gmail.com</span>
-                </a>
-                <a href="https://linkedin.com/in/saddam802216" target="_blank" class="flex items-center space-x-2 text-lg text-teal-400 hover:text-teal-300 transition-colors">
-                    <!-- LinkedIn Icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72c0-.95-.79-1.72-1.77-1.72zM7.18 20.45H3.61V9.06h3.57v11.39zM5.39 7.42c-1.19 0-2.16-.96-2.16-2.16s.97-2.16 2.16-2.16 2.16.96 2.16 2.16-.97 2.16-2.16 2.16zM20.45 20.45h-3.57v-5.6c0-1.34-.02-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7H9.28V9.06h3.43v1.57h.05c.48-.9 1.63-1.85 3.39-1.85 3.63 0 4.31 2.39 4.31 5.49v6.18z"/>
-                    </svg>
-                    <span>linkedin.com/in/saddam802216</span>
-                </a>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer Section -->
-    <footer class="bg-gray-800 text-center p-4 mt-12 text-gray-400">
-        <p>&copy; 2024 Saddam Hussain. All Rights Reserved.</p>
-    </footer>
-
-    <!-- JavaScript for mobile menu toggle -->
-    <script>
-        document.getElementById('menu-button').addEventListener('click', function() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Close mobile menu when a link is clicked
-        document.querySelectorAll('#mobile-menu a').forEach(item => {
-            item.addEventListener('click', () => {
-                document.getElementById('mobile-menu').classList.add('hidden');
-            });
-        });
-    </script>
+  <script>
+    const track = document.querySelector('.carousel-track');
+    let scrollAmount = 0;
+    setInterval(() => {
+      scrollAmount += 300;
+      if (scrollAmount >= track.scrollWidth - track.clientWidth) scrollAmount = 0;
+      track.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+    }, 3000);
+  </script>
 </body>
 </html>
